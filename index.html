@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spanish 121 · Capítulo 2.1 · Nacionalidades y Profesiones</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --navy-light: #243561;
+    --terracotta: #c4522a;
+    --terra-light: #e07048;
+    --gold: #d4a537;
+    --gold-light: #f0c45a;
+    --cream: #fdf6ec;
+    --cream-dark: #f4e8d4;
+    --sage: #5a7a5e;
+    --sage-light: #7ba080;
+    --text: #2a1f14;
+    --text-light: #6b5a45;
+    --correct: #2d6e3e;
+    --wrong: #9e2a2a;
+    --correct-bg: #e8f5ec;
+    --wrong-bg: #fde8e8;
+    --tile-shadow: 0 4px 20px rgba(26,39,68,0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background-color: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ─────────────────────────────── */
+  header {
+    background: var(--navy);
+    color: white;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.35);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .header-badge {
+    background: var(--terracotta);
+    color: white;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 3px;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    flex: 1;
+  }
+
+  .header-subtitle {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* ── NAV TABS ───────────────────────────── */
+  nav {
+    background: var(--navy-light);
+    border-bottom: 3px solid var(--gold);
+    overflow-x: auto;
+  }
+
+  .nav-inner {
+    display: flex;
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  nav button {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.6);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  nav button:hover { color: white; }
+  nav button.active {
+    color: var(--gold-light);
+    border-bottom-color: var(--gold-light);
+  }
+
+  /* ── MAIN ───────────────────────────────── */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  section { display: none; }
+  section.active { display: block; animation: fadeIn 0.3s ease; }
+
+  @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+
+  /* ── WEEK OVERVIEW ──────────────────────── */
+  .week-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #2d4a7a 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 36px 40px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .week-hero::before {
+    content: '2.1';
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .week-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .week-hero p {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+  }
+
+  .topic-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .chip {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Schedule table */
+  .schedule-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--tile-shadow);
+    margin-bottom: 32px;
+  }
+
+  .schedule-table thead {
+    background: var(--navy);
+    color: white;
+  }
+
+  .schedule-table th {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px 16px;
+    text-align: left;
+  }
+
+  .schedule-table tbody tr:nth-child(even) { background: var(--cream-dark); }
+  .schedule-table tbody tr:nth-child(odd) { background: white; }
+  .schedule-table tbody tr:hover { background: #efe4d4; transition: background 0.2s; }
+
+  .schedule-table td {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    vertical-align: top;
+  }
+
+  .day-type {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+  }
+
+  .type-inclass { background: var(--navy); color: white; }
+  .type-self { background: var(--sage); color: white; }
+  .type-practice { background: var(--terracotta); color: white; }
+
+  .day-focus { font-weight: 600; color: var(--navy); }
+  .hw-note { font-style: italic; color: var(--text-light); font-size: 0.85rem; }
+
+  /* ── SECTION TITLES ─────────────────────── */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 6px;
+    border-left: 5px solid var(--terracotta);
+    padding-left: 16px;
+  }
+
+  .section-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding-left: 21px;
+  }
+
+  /* ── VOCAB CARDS ────────────────────────── */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .vocab-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--tile-shadow);
+    cursor: pointer;
+    perspective: 600px;
+    height: 110px;
+    position: relative;
+  }
+
+  .vocab-card-inner {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(.4,2,.6,1);
+    border-radius: 10px;
+  }
+
+  .vocab-card.flipped .vocab-card-inner { transform: rotateY(180deg); }
+
+  .vocab-front, .vocab-back {
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .vocab-front {
+    background: white;
+    border: 2px solid var(--cream-dark);
+  }
+
+  .vocab-front .es {
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .vocab-front .hint {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    color: var(--text-light);
+    margin-top: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  .vocab-back {
+    background: var(--navy);
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  .vocab-back .en {
+    font-size: 0.95rem;
+    font-weight: 300;
+  }
+
+  .flip-tip {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── GRAMMAR BOXES ──────────────────────── */
+  .grammar-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--tile-shadow);
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+
+  .grammar-header {
+    background: var(--navy);
+    color: white;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .grammar-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--terracotta);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .grammar-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .grammar-body { padding: 24px; }
+  .grammar-body p { margin-bottom: 14px; font-size: 0.95rem; }
+
+  .pronoun-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.9rem;
+  }
+
+  .pronoun-table th {
+    background: var(--cream-dark);
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+
+  .pronoun-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .pronoun-table .sp { font-style: italic; color: var(--navy); font-weight: 600; }
+  .pronoun-table .en { color: var(--text-light); }
+
+  .example-block {
+    background: var(--cream);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 14px 0;
+  }
+
+  .example-block p { margin: 4px 0; font-size: 0.9rem; }
+
+  .example-block .label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px !important;
+  }
+
+  .example-block .es { font-style: italic; color: var(--navy); }
+  .example-block .en { color: var(--text-light); font-size: 0.82rem; }
+
+  /* ── EXERCISES ──────────────────────────── */
+  .exercise-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--tile-shadow);
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+
+  .exercise-header {
+    background: var(--terracotta);
+    color: white;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .exercise-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+  }
+
+  .exercise-header .ex-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    background: rgba(0,0,0,0.2);
+    padding: 4px 10px;
+    border-radius: 3px;
+    letter-spacing: 0.08em;
+  }
+
+  .exercise-body { padding: 24px; }
+
+  .exercise-body .instructions {
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--cream-dark);
+    padding-bottom: 14px;
+  }
+
+  .exercise-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: var(--cream);
+    transition: background 0.2s;
+  }
+
+  .exercise-item.correct { background: var(--correct-bg); }
+  .exercise-item.wrong { background: var(--wrong-bg); }
+
+  .item-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    min-width: 22px;
+    margin-top: 2px;
+  }
+
+  .item-text { flex: 1; }
+  .item-text p { font-size: 0.92rem; margin-bottom: 8px; }
+
+  .fill-sentence {
+    font-size: 0.92rem;
+    line-height: 2.2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .blank-input {
+    background: white;
+    border: none;
+    border-bottom: 2px solid var(--navy);
+    padding: 2px 8px;
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--navy);
+    min-width: 130px;
+    width: auto;
+    transition: border-color 0.2s;
+  }
+
+  .blank-input:focus { outline: none; border-bottom-color: var(--gold); }
+  .blank-input.correct-input { border-bottom-color: var(--correct); color: var(--correct); }
+  .blank-input.wrong-input { border-bottom-color: var(--wrong); color: var(--wrong); }
+
+  .feedback {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    margin-top: 6px;
+    display: none;
+  }
+
+  .feedback.show { display: block; }
+  .feedback.correct { color: var(--correct); }
+  .feedback.wrong { color: var(--wrong); }
+
+  .btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--cream-dark);
+  }
+
+  .btn {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-check { background: var(--navy); color: white; }
+  .btn-check:hover { background: var(--navy-light); transform: translateY(-1px); }
+  .btn-reset { background: var(--cream-dark); color: var(--text); }
+  .btn-reset:hover { background: #e0d0b8; }
+
+  .score-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-left: auto;
+    display: none;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .score-badge.show { display: flex; }
+  .score-badge.good { background: var(--correct-bg); color: var(--correct); }
+  .score-badge.ok { background: #fff3cd; color: #856404; }
+  .score-badge.retry { background: var(--wrong-bg); color: var(--wrong); }
+
+  /* word bank */
+  .word-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 14px;
+    background: var(--cream);
+    border-radius: 8px;
+    border: 1px dashed var(--cream-dark);
+  }
+
+  .word-bank-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  .word-chip {
+    background: white;
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--navy);
+  }
+
+  /* ── CONJUGATION TABLE EXERCISE ─────────── */
+  .conj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .conj-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--cream);
+    border-radius: 6px;
+    padding: 8px 12px;
+  }
+
+  .conj-pronoun {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    min-width: 90px;
+  }
+
+  .conj-input {
+    flex: 1;
+    border: none;
+    border-bottom: 2px solid var(--navy);
+    background: transparent;
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--navy);
+    padding: 2px 4px;
+  }
+
+  .conj-input:focus { outline: none; border-bottom-color: var(--gold); }
+  .conj-input.correct-input { border-bottom-color: var(--correct); color: var(--correct); }
+  .conj-input.wrong-input { border-bottom-color: var(--wrong); color: var(--wrong); }
+
+  .conj-verb-header {
+    background: var(--navy);
+    color: white;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .conj-section { margin-bottom: 24px; }
+
+  /* ── CULTURAL NOTE ──────────────────────── */
+  .cultural-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--tile-shadow);
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+
+  .cultural-header {
+    background: linear-gradient(90deg, var(--sage) 0%, var(--sage-light) 100%);
+    color: white;
+    padding: 16px 24px;
+  }
+
+  .cultural-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+  }
+
+  .cultural-body {
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 640px) { .cultural-body { grid-template-columns: 1fr; } }
+
+  .fact-card {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .fact-card .fact-icon { font-size: 1.5rem; margin-bottom: 8px; }
+  .fact-card h4 {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .fact-card p { font-size: 0.88rem; }
+
+  /* ── VIDEO LOG ──────────────────────────── */
+  .checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--cream);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .checklist-item:hover { background: var(--cream-dark); }
+
+  .checklist-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--sage);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .checklist-item label {
+    font-size: 0.92rem;
+    cursor: pointer;
+    flex: 1;
+  }
+
+  .checklist-item.done label {
+    text-decoration: line-through;
+    color: var(--text-light);
+  }
+
+  .script-area {
+    width: 100%;
+    border: 2px solid var(--cream-dark);
+    border-radius: 8px;
+    padding: 16px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.92rem;
+    color: var(--navy);
+    resize: vertical;
+    min-height: 200px;
+    margin-top: 12px;
+    transition: border-color 0.2s;
+    background: white;
+  }
+
+  .script-area:focus { outline: none; border-color: var(--gold); }
+
+  .progress-bar-wrap {
+    background: var(--cream-dark);
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+    margin: 6px 0 4px;
+  }
+
+  .progress-bar {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--sage), var(--sage-light));
+    transition: width 0.5s ease;
+  }
+
+  /* ── RESPONSIVE ─────────────────────────── */
+  @media (max-width: 600px) {
+    .header-inner { padding: 12px 16px; gap: 10px; }
+    main { padding: 24px 16px 60px; }
+    .week-hero { padding: 24px 20px; }
+    .week-hero h1 { font-size: 1.5rem; }
+    .grammar-body { padding: 16px; }
+    .exercise-body { padding: 16px; }
+    .conj-grid { grid-template-columns: 1fr; }
+  }
+
+  /* connector chips */
+  .connector-chip {
+    display: inline-block;
+    background: var(--navy);
+    color: white;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 2px 4px;
+    letter-spacing: 0.04em;
+  }
+
+  /* learning objectives list */
+  .obj-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .obj-item {
+    background: white;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    box-shadow: var(--tile-shadow);
+    border-left: 4px solid var(--gold);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .obj-item::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.7rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="header-badge">SPSCC · ESP 121</span>
+    <span class="header-title">Capítulo 2.1 — Nacionalidades y Profesiones</span>
+    <span class="header-subtitle">Semana 3 · Week 3</span>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="active" onclick="showSection('overview')">📋 Overview</button>
+    <button onclick="showSection('vocab')">🌎 Vocabulario</button>
+    <button onclick="showSection('gramatica')">📐 Gramática</button>
+    <button onclick="showSection('ejercicios')">✏️ Ejercicios</button>
+    <button onclick="showSection('cognados')">🔗 Cognados</button>
+    <button onclick="showSection('cultura')">⭐ Cultura</button>
+
+  </div>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════ OVERVIEW -->
+<section id="overview" class="active">
+  <div class="week-hero">
+    <h1>Week 3 — Capítulo 2.1: Nacionalidades y Profesiones</h1>
+    <p>SPSCC · Spanish 121 · Nationalities, professions, and describing people</p>
+    <div class="topic-chips">
+      <span class="chip">nacionalidades</span>
+      <span class="chip">profesiones</span>
+      <span class="chip">ir · tener · hacer</span>
+      <span class="chip">concordancia de adjetivos</span>
+      <span class="chip">personalidad</span>
+      <span class="chip">cognados · falsos amigos</span>
+    </div>
+  </div>
+
+  <!-- Learning Objectives -->
+  <h2 class="section-title">Learning Objectives</h2>
+  <p class="section-meta">Objetivos del capítulo · By the end of Chapter 2.1 you will be able to:</p>
+  <div class="obj-list">
+    <div class="obj-item"><span>Name nationalities from the Spanish-speaking world with correct gender agreement</span></div>
+    <div class="obj-item"><span>Identify common professions and use them with appropriate articles</span></div>
+    <div class="obj-item"><span>Conjugate the irregular verbs <em>ir</em>, <em>tener</em>, and <em>hacer</em> in the present tense</span></div>
+    <div class="obj-item"><span>Apply adjective agreement rules — gender (M/F) and number (singular/plural)</span></div>
+    <div class="obj-item"><span>Describe people's personality using a range of descriptive adjectives</span></div>
+    <div class="obj-item"><span>Recognize predictable English–Spanish cognate patterns (<em>-tion → -ción, -ty → -dad</em>)</span></div>
+    <div class="obj-item"><span>Identify and avoid <em>falsos amigos</em> (false cognates)</span></div>
+    <div class="obj-item"><span>Describe famous people from the Spanish-speaking world using chapter vocabulary</span></div>
+  </div>
+
+  <!-- Weekly Schedule -->
+  <h2 class="section-title">Weekly Schedule</h2>
+  <p class="section-meta">4 days · 4 focuses · Semana 3</p>
+
+  <table class="schedule-table">
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Type</th>
+        <th>Focus</th>
+        <th>Activities</th>
+        <th>Homework</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Weekend</strong><br><small style="color:var(--text-light);font-family:'Space Mono',monospace;font-size:0.65rem">Fin de semana</small></td>
+        <td><span class="day-type type-self">Self-Guided</span></td>
+        <td class="day-focus">Vocab 1 — Nationalities &amp; Professions</td>
+        <td>Study Vocabulario 1 (nationalities + professions); complete Ejercicio 1 (profession matching) and Ejercicio 2 (nationality fill-in) independently</td>
+        <td class="hw-note">Ejercicios 1–2 due Monday; learn all nationality adjectives</td>
+      </tr>
+      <tr>
+        <td><strong>Monday</strong><br><small style="color:var(--text-light);font-family:'Space Mono',monospace;font-size:0.65rem">Lunes</small></td>
+        <td><span class="day-type type-inclass">In-Class</span></td>
+        <td class="day-focus">ir / tener / hacer</td>
+        <td>Grammar 1 instruction (<em>ir/tener/hacer</em>); conjugation table race; Ejercicio 3A–C (tables); <em>¿Qué haces?</em> partner survey</td>
+        <td class="hw-note">Ejercicio 4 (verbs in context); review <em>ser</em> from Chapter 1</td>
+      </tr>
+      <tr>
+        <td><strong>Tuesday</strong><br><small style="color:var(--text-light);font-family:'Space Mono',monospace;font-size:0.65rem">Martes</small></td>
+        <td><span class="day-type type-practice">Practice</span></td>
+        <td class="day-focus">Adjective Agreement — gender &amp; number</td>
+        <td>Grammar 2 instruction; Ejercicio 5 (rewrite with agreement); celebrity description gallery walk</td>
+        <td class="hw-note">Write 6 sentences describing 3 celebrities using full adjective agreement</td>
+      </tr>
+      <tr>
+        <td><strong>Wednesday</strong><br><small style="color:var(--text-light);font-family:'Space Mono',monospace;font-size:0.65rem">Miércoles</small></td>
+        <td><span class="day-type type-inclass">In-Class</span></td>
+        <td class="day-focus">Vocabulario 2 + Cognates</td>
+        <td>Vocab 2 presentation (personality); personality bingo; Vocabulario Quiz 3 (nationalities + professions); cognates review</td>
+        <td class="hw-note">Complete SpanishDictionary assignments and the weekly quiz</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Monday class plan -->
+  <h2 class="section-title">Monday In-Class Plan</h2>
+  <p class="section-meta">Lunes · En clase · 50 minutes</p>
+
+  <div style="display:grid;gap:12px;margin-bottom:32px;">
+    <div class="exercise-item" style="background:white;border-left:4px solid var(--gold)">
+      <div class="item-num" style="font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--gold);min-width:70px">0:00–0:05</div>
+      <div class="item-text"><strong>Warm-Up — Regular verb rapid-fire:</strong> Instructor calls a pronoun + verb; students write the conjugation on mini whiteboards or paper.</div>
+    </div>
+    <div class="exercise-item" style="background:white;border-left:4px solid var(--terracotta)">
+      <div class="item-num" style="font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--terracotta);min-width:70px">0:05–0:20</div>
+      <div class="item-text"><strong>Grammar Instruction (<em>ir / tener / hacer</em>):</strong> Conjugations on the board. Highlight irregular forms (<em>voy, tengo, hago</em>). Students recite all three paradigms chorally.</div>
+    </div>
+    <div class="exercise-item" style="background:white;border-left:4px solid var(--navy)">
+      <div class="item-num" style="font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--navy);min-width:70px">0:20–0:30</div>
+      <div class="item-text"><strong>Conjugation Table Race:</strong> Pairs race to complete Ejercicio 3 tables (<em>ir / tener / hacer</em>) from memory. First pair done reads each table aloud for verification.</div>
+    </div>
+    <div class="exercise-item" style="background:white;border-left:4px solid var(--sage)">
+      <div class="item-num" style="font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--sage);min-width:70px">0:30–0:45</div>
+      <div class="item-text"><strong>¿Qué haces? Partner Survey:</strong> Ask 3 classmates — <em>¿Qué haces después de clase? ¿Tienes trabajo? ¿Adónde vas los fines de semana?</em> Record answers in a 3-column mini-grid.</div>
+    </div>
+    <div class="exercise-item" style="background:white;border-left:4px solid var(--gold)">
+      <div class="item-num" style="font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--gold);min-width:70px">0:45–0:50</div>
+      <div class="item-text"><strong>Report Back:</strong> Share one surprising answer with the class using <em>ir / tener / hacer</em>.</div>
+    </div>
+  </div>
+
+  <!-- Wednesday plan -->
+  <h2 class="section-title">Wednesday In-Class Plan</h2>
+  <p class="section-meta">Miércoles · En clase · 50 minutes</p>
+
+  <div style="display:grid;gap:12px;margin-bottom:32px;">
+    <div class="exercise-item" style="background:white;border-left:4px solid var(--terracotta)">
+      <div class="item-num" style="font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--terracotta);min-width:70px">0:00–0:10</div>
+      <div class="item-text"><strong>Vocabulario Quiz 3:</strong> Nationalities + professions (matching, 10 items).</div>
+    </div>
+    <div class="exercise-item" style="background:white;border-left:4px solid var(--navy)">
+      <div class="item-num" style="font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--navy);min-width:70px">0:10–0:20</div>
+      <div class="item-text"><strong>Vocabulary Flash Presentation:</strong> Instructor shows images of people; students call out the nationality adjective (with correct gender) and profession.</div>
+    </div>
+    <div class="exercise-item" style="background:white;border-left:4px solid var(--sage)">
+      <div class="item-num" style="font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--sage);min-width:70px">0:20–0:40</div>
+      <div class="item-text"><strong>Personality Bingo:</strong> Fill in a 4×4 grid with personality adjectives. Walk around and find classmates who match — ask <em>"¿Eres ___?"</em> Write their name in the square. First to get 4-in-a-row wins.</div>
+    </div>
+    <div class="exercise-item" style="background:white;border-left:4px solid var(--gold)">
+      <div class="item-num" style="font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--gold);min-width:70px">0:40–0:50</div>
+      <div class="item-text"><strong>Cognates Review:</strong> Pattern drill (<em>-tion → -ción, -ty → -dad, -ous → -oso</em>) and <em>falsos amigos</em> warning board — see the <strong>Cognados</strong> tab.</div>
+    </div>
+  </div>
+
+  <!-- Online Resources -->
+  <h2 class="section-title">Online Resources</h2>
+  <p class="section-meta">Semana 3 · Outside Materials</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:16px">
+    <div style="background:white;border-radius:10px;padding:18px;box-shadow:var(--tile-shadow)">
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--terracotta);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Weekend · Self-Guided</div>
+      <p style="font-size:0.88rem;font-weight:600;margin-bottom:8px">Nacionalidades + Profesiones</p>
+      <a href="https://www.youtube.com/watch?v=Mwx19I1JAME" target="_blank" style="display:block;font-size:0.8rem;color:var(--navy);text-decoration:none;margin-bottom:4px">▶ Video: Nationalities in Spanish</a>
+      <a href="https://www.youtube.com/watch?v=lgh-xbweOkc" target="_blank" style="display:block;font-size:0.8rem;color:var(--navy);text-decoration:none;margin-bottom:4px">▶ Video: Professions in Spanish</a>
+      <a href="https://quizlet.com/1077738157/spanish-nationalities-and-professions-flash-cards/" target="_blank" style="display:block;font-size:0.8rem;color:var(--navy);text-decoration:none">📝 Practice: Nationalities &amp; Professions Flashcards (Quizlet)</a>
+    </div>
+    <div style="background:white;border-radius:10px;padding:18px;box-shadow:var(--tile-shadow)">
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--terracotta);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Monday</div>
+      <p style="font-size:0.88rem;font-weight:600;margin-bottom:8px">Verbos ir / tener / hacer</p>
+      <a href="https://www.youtube.com/watch?v=ny4k8kYoxC0" target="_blank" style="display:block;font-size:0.8rem;color:var(--navy);text-decoration:none;margin-bottom:4px">▶ Video: Irregular Verbs ir, tener, hacer</a>
+      <a href="https://conjuguemos.com/verb/multiplechoice/1213324" target="_blank" style="display:block;font-size:0.8rem;color:var(--navy);text-decoration:none">📝 Practice: ir / tener / hacer Drill (Conjuguemos)</a>
+    </div>
+    <div style="background:white;border-radius:10px;padding:18px;box-shadow:var(--tile-shadow)">
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--terracotta);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Tuesday · Practice</div>
+      <p style="font-size:0.88rem;font-weight:600;margin-bottom:8px">Concordancia de adjetivos</p>
+      <a href="https://www.youtube.com/watch?v=Clms2XiluTw" target="_blank" style="display:block;font-size:0.8rem;color:var(--navy);text-decoration:none;margin-bottom:4px">▶ Video: Adjective Agreement in Spanish</a>
+      <a href="https://studyspanish.com/grammar/test/adj1" target="_blank" style="display:block;font-size:0.8rem;color:var(--navy);text-decoration:none">📝 Practice: Adjective Agreement (StudySpanish)</a>
+    </div>
+    <div style="background:white;border-radius:10px;padding:18px;box-shadow:var(--tile-shadow)">
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--terracotta);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Wednesday</div>
+      <p style="font-size:0.88rem;font-weight:600;margin-bottom:8px">Personalidad + Vocabulario Quiz 3</p>
+      <a href="https://www.youtube.com/watch?v=i0b1f5LoI0g" target="_blank" style="display:block;font-size:0.8rem;color:var(--navy);text-decoration:none;margin-bottom:4px">▶ Video: Spanish Personality Adjectives</a>
+      <a href="https://quizlet.com/265299010/spanish-adjectives-personality-flash-cards/" target="_blank" style="display:block;font-size:0.8rem;color:var(--navy);text-decoration:none">📝 Practice: Personality Flashcards (Quizlet)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ VOCABULARIO -->
+<section id="vocab">
+  <h2 class="section-title">Vocabulario A — Nacionalidades</h2>
+  <p class="section-meta">Nationalities · Most have masculine/feminine forms (-o / -a)</p>
+  <p class="flip-tip">🌎 Click any card to flip it and see the translation</p>
+
+  <div class="vocab-grid" id="vocab1Cards"></div>
+
+  <h2 class="section-title">Vocabulario B — Profesiones</h2>
+  <p class="section-meta">Professions · Use el/la to mark gender</p>
+  <p class="flip-tip">💼 Click any card to flip it</p>
+
+  <div class="vocab-grid" id="vocab2Cards"></div>
+
+  <h2 class="section-title">Vocabulario C — Personalidad y Descripción</h2>
+  <p class="section-meta">Personality &amp; description · These adjectives must agree with the noun they describe</p>
+  <p class="flip-tip">✨ Click any card to flip it</p>
+
+  <div class="vocab-grid" id="vocab3Cards"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ GRAMÁTICA -->
+<section id="gramatica">
+  <h2 class="section-title">Gramática — Grammar Notes</h2>
+  <p class="section-meta">Week 3 · Two key structures</p>
+
+  <!-- GRAMMAR BOX 1 — ir / tener / hacer -->
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">G1</div>
+      <div>
+        <h3>High-Frequency Irregular Verbs — <em>ir</em>, <em>tener</em>, <em>hacer</em></h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Present tense · memorize these — you will use them every day!</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <p>These three verbs are <strong>irregular</strong>, but they follow shared patterns you can memorize as a set. <em>ir</em> means <em>to go</em>, <em>tener</em> means <em>to have</em>, and <em>hacer</em> means <em>to do / to make</em>.</p>
+
+      <table class="pronoun-table">
+        <thead>
+          <tr>
+            <th>Pronoun</th>
+            <th>ir (to go)</th>
+            <th>tener (to have)</th>
+            <th>hacer (to do / make)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sp">yo</td>
+            <td class="sp">voy</td>
+            <td class="sp">tengo</td>
+            <td class="sp">hago</td>
+          </tr>
+          <tr>
+            <td class="sp">tú</td>
+            <td class="sp">vas</td>
+            <td class="sp">tienes</td>
+            <td class="sp">haces</td>
+          </tr>
+          <tr>
+            <td class="sp">él/ella/Ud.</td>
+            <td class="sp">va</td>
+            <td class="sp">tiene</td>
+            <td class="sp">hace</td>
+          </tr>
+          <tr>
+            <td class="sp">nosotros</td>
+            <td class="sp">vamos</td>
+            <td class="sp">tenemos</td>
+            <td class="sp">hacemos</td>
+          </tr>
+          <tr>
+            <td class="sp">ellos/Uds.</td>
+            <td class="sp">van</td>
+            <td class="sp">tienen</td>
+            <td class="sp">hacen</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Key pattern:</strong> All three are irregular in the <em>yo</em> form (<em>voy, tengo, hago</em>). <em>tener</em> also has a stem change in <em>tú / él / ellos</em> (tie-). <em>ir</em> is unique — it doesn't even look like its infinitive in the conjugated forms.</p>
+
+      <div class="example-block">
+        <p class="label">Common Phrases</p>
+        <p class="es">ir a + (place) — <span class="en">to go to</span></p>
+        <p class="es">tener + (number) + años — <span class="en">to be ___ years old</span></p>
+        <p class="es">hacer ejercicio / hacer la tarea — <span class="en">to exercise / to do homework</span></p>
+      </div>
+
+      <div class="example-block">
+        <p class="label">Examples · Ejemplos</p>
+        <p class="es">Yo voy a la biblioteca todos los días. <span class="en">→ I go to the library every day.</span></p>
+        <p class="es">¿Cuántos años tienes tú? <span class="en">→ How old are you?</span></p>
+        <p class="es">Ella hace ejercicio en el gimnasio. <span class="en">→ She exercises at the gym.</span></p>
+        <p class="es">Nosotros tenemos una reunión esta tarde.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRAMMAR BOX 2 — Adjective Agreement -->
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">G2</div>
+      <div>
+        <h3>Concordancia de Adjetivos — Adjective Agreement</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Gender (M/F) &amp; number (sg/pl) · adjectives change to match the noun</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <p>Spanish adjectives <strong>must agree</strong> with the noun they describe in both <strong>gender</strong> (masculine / feminine) and <strong>number</strong> (singular / plural). What the adjective ends in tells you how it changes.</p>
+
+      <table class="pronoun-table">
+        <thead>
+          <tr><th>Type</th><th>Masculine</th><th>Feminine</th><th>Plural (add -s / -es)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="connector-chip">-o / -a</span></td>
+            <td class="sp">simpático · famoso</td>
+            <td class="sp">simpática · famosa</td>
+            <td class="sp">simpáticos / simpáticas</td>
+          </tr>
+          <tr>
+            <td><span class="connector-chip">-e (no change)</span></td>
+            <td class="sp">inteligente · influyente</td>
+            <td class="sp">inteligente · influyente</td>
+            <td class="sp">inteligentes · influyentes</td>
+          </tr>
+          <tr>
+            <td><span class="connector-chip">consonant</span></td>
+            <td class="sp">trabajador</td>
+            <td class="sp">trabajadora (add -a)</td>
+            <td class="sp">trabajadores · trabajadoras</td>
+          </tr>
+          <tr>
+            <td><span class="connector-chip">-ista (invariable)</span></td>
+            <td class="sp">el artista</td>
+            <td class="sp">la artista</td>
+            <td class="sp">los/las artistas</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="example-block">
+        <p class="label">Full Example — all four forms</p>
+        <p class="es">un actor famoso <span class="en">→ a famous actor</span></p>
+        <p class="es">una actriz famosa <span class="en">→ a famous actress</span></p>
+        <p class="es">unos actores famosos <span class="en">→ (some) famous actors</span></p>
+        <p class="es">unas actrices famosas <span class="en">→ (some) famous actresses</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ EJERCICIOS -->
+<section id="ejercicios">
+  <h2 class="section-title">Ejercicios — Practice Exercises</h2>
+  <p class="section-meta">Interactive · Type your answers and click Check</p>
+
+  <!-- EJERCICIO 1 — Profession Matching -->
+  <div class="exercise-card">
+    <div class="exercise-header">
+      <h3>Ejercicio 1 — Emparejamiento: Professions</h3>
+      <span class="ex-num">EJ. 1</span>
+    </div>
+    <div class="exercise-body">
+      <p class="instructions">Type the English equivalent for each Spanish profession. / Escribe el equivalente en inglés de cada profesión.</p>
+      <div id="ej1"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEj1()">Check Answers</button>
+        <button class="btn btn-reset" onclick="resetEj1()">Reset</button>
+        <span class="score-badge" id="score1"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 2 — Nationality Fill-in -->
+  <div class="exercise-card">
+    <div class="exercise-header">
+      <h3>Ejercicio 2 — Nacionalidades: Fill-in with Correct Agreement</h3>
+      <span class="ex-num">EJ. 2</span>
+    </div>
+    <div class="exercise-body">
+      <p class="instructions">Write the correct nationality adjective, making sure it agrees in gender with the noun. / Escribe el adjetivo de nacionalidad con la concordancia adecuada.</p>
+      <div class="word-bank">
+        <span class="word-bank-label">Word Bank — Nationalities (choose &amp; conjugate)</span>
+        <span class="word-chip">mexicano/a</span>
+        <span class="word-chip">argentino/a</span>
+        <span class="word-chip">cubano/a</span>
+        <span class="word-chip">español/a</span>
+        <span class="word-chip">colombiano/a</span>
+        <span class="word-chip">estadounidense</span>
+        <span class="word-chip">puertorriqueño/a</span>
+        <span class="word-chip">chileno/a</span>
+      </div>
+      <div id="ej2"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEj2()">Check Answers</button>
+        <button class="btn btn-reset" onclick="resetEj2()">Reset</button>
+        <span class="score-badge" id="score2"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 3 — Conjugation Tables -->
+  <div class="exercise-card">
+    <div class="exercise-header">
+      <h3>Ejercicio 3 — Tablas: ir / tener / hacer</h3>
+      <span class="ex-num">EJ. 3</span>
+    </div>
+    <div class="exercise-body">
+      <p class="instructions">Complete each conjugation table. / Completa cada tabla de conjugación.</p>
+
+      <div class="conj-section">
+        <div class="conj-verb-header">
+          <span>A. IR (to go)</span>
+          <span style="opacity:0.6;font-size:0.6rem">present · presente</span>
+        </div>
+        <div class="conj-grid" id="conjVerb1"></div>
+      </div>
+
+      <div class="conj-section">
+        <div class="conj-verb-header">
+          <span>B. TENER (to have)</span>
+          <span style="opacity:0.6;font-size:0.6rem">present · presente</span>
+        </div>
+        <div class="conj-grid" id="conjVerb2"></div>
+      </div>
+
+      <div class="conj-section">
+        <div class="conj-verb-header">
+          <span>C. HACER (to do / make)</span>
+          <span style="opacity:0.6;font-size:0.6rem">present · presente</span>
+        </div>
+        <div class="conj-grid" id="conjVerb3"></div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEj3()">Check Answers</button>
+        <button class="btn btn-reset" onclick="resetEj3()">Reset</button>
+        <span class="score-badge" id="score3"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 4 — Verbs in Context -->
+  <div class="exercise-card">
+    <div class="exercise-header">
+      <h3>Ejercicio 4 — Completar: ir / tener / hacer in Context</h3>
+      <span class="ex-num">EJ. 4</span>
+    </div>
+    <div class="exercise-body">
+      <p class="instructions">Fill in with the correct form of <em>ir</em>, <em>tener</em>, or <em>hacer</em>. / Completa con la forma correcta.</p>
+      <div id="ej4"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEj4()">Check Answers</button>
+        <button class="btn btn-reset" onclick="resetEj4()">Reset</button>
+        <span class="score-badge" id="score4"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 5 — Adjective Agreement Rewrite -->
+  <div class="exercise-card">
+    <div class="exercise-header">
+      <h3>Ejercicio 5 — Concordancia: Rewrite with Correct Agreement</h3>
+      <span class="ex-num">EJ. 5</span>
+    </div>
+    <div class="exercise-body">
+      <p class="instructions">Change the noun to the indicated form and make the adjective agree. Type only the new adjective form. / Cambia el sustantivo y haz concordar el adjetivo — escribe solo la nueva forma del adjetivo.</p>
+      <div id="ej5"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEj5()">Check Answers</button>
+        <button class="btn btn-reset" onclick="resetEj5()">Reset</button>
+        <span class="score-badge" id="score5"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ COGNADOS -->
+<section id="cognados">
+  <h2 class="section-title">Cognados — English–Spanish Cognates</h2>
+  <p class="section-meta">The language learner's best friend (with a few traps)</p>
+
+  <!-- Intro box -->
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon" style="background:var(--gold);color:var(--navy)">C1</div>
+      <div>
+        <h3>¿Qué son los cognados? — What are cognates?</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Shared etymology from Latin · free vocabulary!</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <p><strong>Cognados</strong> are words in Spanish and English that share a Latin (or occasionally Greek) root. Because about 30–40% of everyday English vocabulary comes from Latin via French, thousands of Spanish words will look and feel instantly familiar. There are three kinds you should recognize:</p>
+
+      <table class="pronoun-table">
+        <thead>
+          <tr><th>Type</th><th>Description</th><th>Examples</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="connector-chip" style="background:var(--correct)">exact</span></td>
+            <td class="en">Identical spelling in both languages</td>
+            <td class="sp">hotel · hospital · chocolate · color · error · idea · natural · tropical</td>
+          </tr>
+          <tr>
+            <td><span class="connector-chip" style="background:var(--navy)">predictable</span></td>
+            <td class="en">Near-identical, following a recurring sound/spelling pattern</td>
+            <td class="sp">nation → nación · famous → famoso · electricity → electricidad</td>
+          </tr>
+          <tr>
+            <td><span class="connector-chip" style="background:var(--wrong)">false friend</span></td>
+            <td class="en">Looks like an English word but means something completely different</td>
+            <td class="sp">embarazada ≠ embarrassed (pregnant!) · éxito ≠ exit (success!)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Patterns box -->
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon">C2</div>
+      <div>
+        <h3>Los patrones — The Predictable Patterns</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Learn these 6 endings and you unlock thousands of words</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <p>When an English word ends in one of these suffixes, the Spanish version almost always follows a predictable transformation. Read the column, then say the pattern out loud until it becomes automatic.</p>
+
+      <table class="pronoun-table">
+        <thead>
+          <tr><th>English ending</th><th>Spanish ending</th><th>Example</th><th>Gender</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="en"><strong>-tion</strong></td>
+            <td class="sp">-ción</td>
+            <td class="sp">nation → la nación · action → la acción</td>
+            <td class="en">always feminine</td>
+          </tr>
+          <tr>
+            <td class="en"><strong>-sion</strong></td>
+            <td class="sp">-sión</td>
+            <td class="sp">television → la televisión · decision → la decisión</td>
+            <td class="en">always feminine</td>
+          </tr>
+          <tr>
+            <td class="en"><strong>-ty</strong></td>
+            <td class="sp">-dad</td>
+            <td class="sp">university → la universidad · liberty → la libertad</td>
+            <td class="en">always feminine</td>
+          </tr>
+          <tr>
+            <td class="en"><strong>-ous</strong></td>
+            <td class="sp">-oso/a</td>
+            <td class="sp">famous → famoso · generous → generoso</td>
+            <td class="en">agrees (M/F)</td>
+          </tr>
+          <tr>
+            <td class="en"><strong>-ic / -ical</strong></td>
+            <td class="sp">-ico/a</td>
+            <td class="sp">fantastic → fantástico · classical → clásico</td>
+            <td class="en">agrees (M/F)</td>
+          </tr>
+          <tr>
+            <td class="en"><strong>-ly</strong></td>
+            <td class="sp">-mente</td>
+            <td class="sp">rapidly → rápidamente · exactly → exactamente</td>
+            <td class="en">invariable (adverb)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="example-block">
+        <p class="label">💡 Pro tip — pronunciation shifts</p>
+        <p class="es">English <em>th-</em> often becomes Spanish <em>t-</em>: <strong>theater → teatro</strong>, <strong>theme → tema</strong>.</p>
+        <p class="es">English <em>ph-</em> becomes Spanish <em>f-</em>: <strong>philosophy → filosofía</strong>, <strong>photo → foto</strong>.</p>
+        <p class="es">English silent <em>h-</em> often stays silent in Spanish too, but spelled differently: <strong>hour → hora</strong> (but <em>honor → honor</em>).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- False friends box -->
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon" style="background:var(--wrong)">⚠</div>
+      <div>
+        <h3>Falsos Amigos — False Friends</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">The traps that get every learner at least once</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <p>These Spanish words look deceptively like English words but mean something completely different. Learn them now to avoid embarrassing (or hilarious) mistakes later.</p>
+
+      <table class="pronoun-table">
+        <thead>
+          <tr><th>Spanish</th><th>Looks like…</th><th>Actually means</th><th>"English" is really…</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sp">embarazada</td>
+            <td class="en">embarrassed</td>
+            <td class="sp"><strong>pregnant</strong></td>
+            <td class="en">avergonzado/a</td>
+          </tr>
+          <tr>
+            <td class="sp">éxito</td>
+            <td class="en">exit</td>
+            <td class="sp"><strong>success</strong></td>
+            <td class="en">la salida</td>
+          </tr>
+          <tr>
+            <td class="sp">librería</td>
+            <td class="en">library</td>
+            <td class="sp"><strong>bookstore</strong></td>
+            <td class="en">la biblioteca</td>
+          </tr>
+          <tr>
+            <td class="sp">sopa</td>
+            <td class="en">soap</td>
+            <td class="sp"><strong>soup</strong></td>
+            <td class="en">el jabón</td>
+          </tr>
+          <tr>
+            <td class="sp">ropa</td>
+            <td class="en">rope</td>
+            <td class="sp"><strong>clothes</strong></td>
+            <td class="en">la cuerda</td>
+          </tr>
+          <tr>
+            <td class="sp">carpeta</td>
+            <td class="en">carpet</td>
+            <td class="sp"><strong>folder</strong></td>
+            <td class="en">la alfombra</td>
+          </tr>
+          <tr>
+            <td class="sp">asistir</td>
+            <td class="en">to assist</td>
+            <td class="sp"><strong>to attend</strong></td>
+            <td class="en">ayudar</td>
+          </tr>
+          <tr>
+            <td class="sp">actualmente</td>
+            <td class="en">actually</td>
+            <td class="sp"><strong>currently</strong></td>
+            <td class="en">en realidad / de hecho</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 6 — Cognate Pattern Conversion -->
+  <div class="exercise-card">
+    <div class="exercise-header">
+      <h3>Ejercicio 6 — Convert the Cognate Pattern</h3>
+      <span class="ex-num">EJ. 6</span>
+    </div>
+    <div class="exercise-body">
+      <p class="instructions">For each English word, write the Spanish cognate by applying the pattern. Accents count — if you can't type them, unaccented spellings are accepted too. / Escribe el cognado español aplicando el patrón.</p>
+      <div id="ej6"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEj6()">Check Answers</button>
+        <button class="btn btn-reset" onclick="resetEj6()">Reset</button>
+        <span class="score-badge" id="score6"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 7 — Falsos Amigos -->
+  <div class="exercise-card">
+    <div class="exercise-header">
+      <h3>Ejercicio 7 — Falsos Amigos: What does it really mean?</h3>
+      <span class="ex-num">EJ. 7</span>
+    </div>
+    <div class="exercise-body">
+      <p class="instructions">These Spanish words are NOT what they look like in English. Write the correct English meaning (one word is fine). / Escribe el significado real en inglés.</p>
+      <div id="ej7"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" onclick="checkEj7()">Check Answers</button>
+        <button class="btn btn-reset" onclick="resetEj7()">Reset</button>
+        <span class="score-badge" id="score7"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ CULTURA -->
+<section id="cultura">
+  <h2 class="section-title">Nota Cultural — Gente famosa del mundo hispanohablante</h2>
+  <p class="section-meta">Famous people from the Spanish-speaking world</p>
+
+  <div class="cultural-card">
+    <div class="cultural-header">
+      <h3>⭐ Seis figuras emblemáticas / Six Iconic Figures</h3>
+    </div>
+    <div class="cultural-body">
+      <div class="fact-card">
+        <div class="fact-icon">🎤</div>
+        <h4>Shakira — Colombia</h4>
+        <p>Cantante y compositora <em>colombiana</em> de Barranquilla. Es <em>famosa</em> y <em>talentosa</em> — ha vendido más de 80 millones de discos y canta en español, inglés, portugués y árabe.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">📚</div>
+        <h4>Gabriel García Márquez — Colombia</h4>
+        <p><em>Escritor colombiano</em> de Aracataca, ganador del Premio Nobel de Literatura (1982). Su novela <em>Cien años de soledad</em> definió el realismo mágico.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🎨</div>
+        <h4>Frida Kahlo — México</h4>
+        <p>Pintora <em>mexicana</em> de Coyoacán. Sus autorretratos fusionan la tradición popular con el surrealismo y exploran temas de identidad, dolor y la experiencia femenina.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🎬</div>
+        <h4>Pedro Almodóvar — España</h4>
+        <p>Director <em>español</em>, una de las figuras <em>más influyentes</em> del cine contemporáneo. Ha ganado dos premios Óscar y múltiples premios Goya y Cannes.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🌟</div>
+        <h4>Penélope Cruz — España</h4>
+        <p>Actriz <em>española</em> nacida en Alcobendas. La primera actriz española en ganar un Óscar (por <em>Vicky Cristina Barcelona</em>, 2008) y musa frecuente de Almodóvar.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🎵</div>
+        <h4>Jennifer Lopez — EE.UU. / PR</h4>
+        <p>Cantante, actriz y bailarina <em>estadounidense</em>, nacida en el Bronx de padres <em>puertorriqueños</em>. Símbolo de la presencia latina en Hollywood y la cultura pop.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Description Practice -->
+  <div class="grammar-box">
+    <div class="grammar-header">
+      <div class="grammar-icon" style="background:var(--sage)">💬</div>
+      <div>
+        <h3>Describe a una celebridad — Oral Practice Prompts</h3>
+        <p style="font-size:0.75rem;opacity:0.7;margin-top:2px;font-family:'Space Mono',monospace">Tuesday celebrity description gallery walk</p>
+      </div>
+    </div>
+    <div class="grammar-body">
+      <p>Use these sentence frames to describe a famous person. <strong>Pay close attention to adjective agreement</strong> — the adjective must match the celebrity's gender.</p>
+      <div class="example-block">
+        <p class="label">Sentence Frames · Estructuras</p>
+        <p class="es">___ es <strong>[nacionalidad]</strong>. <span class="en">(adjective agrees with the person's gender)</span></p>
+        <p class="es">Es un/una <strong>[profesión]</strong> muy <strong>[adjetivo]</strong>.</p>
+        <p class="es">Es <strong>famoso/a</strong> por ___.</p>
+        <p class="es"><strong>Tiene</strong> ___ años y <strong>hace</strong> ___ desde hace muchos años.</p>
+        <p class="es">En mi opinión, es <strong>creativo/a</strong>, <strong>talentoso/a</strong> e <strong>influyente</strong>.</p>
+        <p class="es">Siempre <strong>va</strong> a eventos importantes como ___.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<script>
+// ── NAVIGATION ─────────────────────────────────────
+function showSection(id) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ── UTILITY ────────────────────────────────────────
+function normalize(s) {
+  return (s || '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function showScore(id, correct, total) {
+  const el = document.getElementById(id);
+  el.textContent = `${correct} / ${total}`;
+  const pct = correct / total;
+  el.className = 'score-badge show ' + (pct >= 0.85 ? 'good' : pct >= 0.6 ? 'ok' : 'retry');
+}
+
+// ── VOCAB CARDS ────────────────────────────────────
+const vocab1 = [
+  ['mexicano/a', 'Mexican'],
+  ['español/a', 'Spanish'],
+  ['colombiano/a', 'Colombian'],
+  ['argentino/a', 'Argentine'],
+  ['cubano/a', 'Cuban'],
+  ['estadounidense', 'American (U.S.)'],
+  ['puertorriqueño/a', 'Puerto Rican'],
+  ['dominicano/a', 'Dominican'],
+  ['guatemalteco/a', 'Guatemalan'],
+  ['chileno/a', 'Chilean'],
+  ['venezolano/a', 'Venezuelan'],
+  ['peruano/a', 'Peruvian'],
+];
+
+const vocab2 = [
+  ['el/la actor / actriz', 'actor / actress'],
+  ['el/la cantante', 'singer'],
+  ['el/la director/a', 'director'],
+  ['el/la escritor/a', 'writer'],
+  ['el/la político/a', 'politician'],
+  ['el/la deportista', 'athlete'],
+  ['el/la artista', 'artist'],
+  ['el/la músico/a', 'musician'],
+  ['el/la cineasta', 'filmmaker'],
+  ['el/la científico/a', 'scientist'],
+];
+
+const vocab3 = [
+  ['simpático/a', 'nice, friendly'],
+  ['antipático/a', 'unfriendly'],
+  ['inteligente', 'intelligent'],
+  ['creativo/a', 'creative'],
+  ['trabajador/a', 'hard-working'],
+  ['perezoso/a', 'lazy'],
+  ['serio/a', 'serious'],
+  ['divertido/a', 'fun'],
+  ['tímido/a', 'shy'],
+  ['extrovertido/a', 'outgoing'],
+  ['famoso/a', 'famous'],
+  ['talentoso/a', 'talented'],
+  ['influyente', 'influential'],
+  ['generoso/a', 'generous'],
+  ['ambicioso/a', 'ambitious'],
+  ['carismático/a', 'charismatic'],
+];
+
+function buildCards(data, containerId) {
+  const grid = document.getElementById(containerId);
+  data.forEach(([es, en]) => {
+    const card = document.createElement('div');
+    card.className = 'vocab-card';
+    card.innerHTML = `
+      <div class="vocab-card-inner">
+        <div class="vocab-front">
+          <span class="es">${es}</span>
+          <span class="hint">tap to flip →</span>
+        </div>
+        <div class="vocab-back">
+          <span class="en">${en}</span>
+        </div>
+      </div>`;
+    card.addEventListener('click', () => card.classList.toggle('flipped'));
+    grid.appendChild(card);
+  });
+}
+
+buildCards(vocab1, 'vocab1Cards');
+buildCards(vocab2, 'vocab2Cards');
+buildCards(vocab3, 'vocab3Cards');
+
+// ── GENERIC FILL-IN-WITH-HINT BUILDER ──────────────
+// Used for Ej1, Ej4, Ej5, Ej6, Ej7 — any exercise that's
+// (before text) [hint chip] [input] (after text)
+function buildFillExercise(data, exNum, containerId) {
+  const container = document.getElementById(containerId);
+  data.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'exercise-item';
+    const hintChip = item.verb
+      ? `<span style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--text-light);background:var(--cream-dark);padding:2px 6px;border-radius:3px">${item.verb}</span>`
+      : '';
+    div.innerHTML = `
+      <span class="item-num">${i+1}.</span>
+      <div class="item-text">
+        <div class="fill-sentence">
+          ${item.before ? `<span>${item.before}</span>` : ''}
+          ${hintChip}
+          <input class="blank-input" id="e${exNum}_${i}" type="text" placeholder="___" autocomplete="off" spellcheck="false">
+          ${item.after ? `<span>${item.after}</span>` : ''}
+        </div>
+        <div class="feedback" id="fb${exNum}_${i}"></div>
+      </div>`;
+    container.appendChild(div);
+  });
+}
+
+function checkFillExercise(data, exNum, scoreId) {
+  let correct = 0;
+  data.forEach((item, i) => {
+    const inp = document.getElementById(`e${exNum}_${i}`);
+    const fb = document.getElementById(`fb${exNum}_${i}`);
+    const ok = item.accepted.some(a => normalize(a) === normalize(inp.value));
+    inp.className = 'blank-input ' + (ok ? 'correct-input' : 'wrong-input');
+    document.querySelectorAll(`#ej${exNum} .exercise-item`)[i].className = 'exercise-item ' + (ok ? 'correct' : 'wrong');
+    fb.className = 'feedback show ' + (ok ? 'correct' : 'wrong');
+    fb.textContent = ok ? '✓ ¡Correcto!' : `✗ Answer: ${item.accepted[0]}`;
+    if (ok) correct++;
+  });
+  showScore(scoreId, correct, data.length);
+}
+
+function resetFillExercise(data, exNum, scoreId) {
+  data.forEach((_, i) => {
+    const inp = document.getElementById(`e${exNum}_${i}`);
+    inp.value = ''; inp.className = 'blank-input';
+    document.getElementById(`fb${exNum}_${i}`).className = 'feedback';
+    document.querySelectorAll(`#ej${exNum} .exercise-item`)[i].className = 'exercise-item';
+  });
+  document.getElementById(scoreId).className = 'score-badge';
+}
+
+// ── EJERCICIO 1 — PROFESSION MATCHING ──────────────
+const ej1Data = [
+  { before: 'el/la cantante', verb: '→', after: '', accepted: ['singer'] },
+  { before: 'el/la cineasta', verb: '→', after: '', accepted: ['filmmaker', 'film maker'] },
+  { before: 'el/la científico/a', verb: '→', after: '', accepted: ['scientist'] },
+  { before: 'el/la escritor/a', verb: '→', after: '', accepted: ['writer'] },
+  { before: 'el/la deportista', verb: '→', after: '', accepted: ['athlete'] },
+  { before: 'el/la político/a', verb: '→', after: '', accepted: ['politician'] },
+  { before: 'el/la artista', verb: '→', after: '', accepted: ['artist'] },
+  { before: 'el/la director/a', verb: '→', after: '', accepted: ['director'] },
+];
+buildFillExercise(ej1Data, 1, 'ej1');
+function checkEj1() { checkFillExercise(ej1Data, 1, 'score1'); }
+function resetEj1() { resetFillExercise(ej1Data, 1, 'score1'); }
+
+// ── EJERCICIO 2 — NATIONALITY FILL-IN (word bank) ──
+const ej2Data = [
+  { before: 'Jennifer Lopez es',                             after: 'porque nació en Nueva York de padres puertorriqueños.', accepted: ['estadounidense'] },
+  { before: 'Gabriel García Márquez fue un escritor',        after: 'famoso de Aracataca.',                                   accepted: ['colombiano'] },
+  { before: 'Shakira es una cantante',                       after: 'de Barranquilla.',                                        accepted: ['colombiana'] },
+  { before: 'Frida Kahlo fue una pintora',                   after: 'de Coyoacán.',                                            accepted: ['mexicana'] },
+  { before: 'Pedro Almodóvar es un director',                after: 'muy influyente.',                                         accepted: ['español'] },
+  { before: 'Penélope Cruz es actriz',                       after: 'nacida en Alcobendas.',                                   accepted: ['española'] },
+];
+buildFillExercise(ej2Data, 2, 'ej2');
+function checkEj2() { checkFillExercise(ej2Data, 2, 'score2'); }
+function resetEj2() { resetFillExercise(ej2Data, 2, 'score2'); }
+
+// ── EJERCICIO 3 — CONJUGATION TABLES (ir/tener/hacer)
+const conjData = {
+  ir: {
+    containerId: 'conjVerb1',
+    rows: [
+      { pronoun: 'yo',            accepted: ['voy'] },
+      { pronoun: 'nosotros/as',   accepted: ['vamos'] },
+      { pronoun: 'tú',            accepted: ['vas'] },
+      { pronoun: 'ellos/Uds.',    accepted: ['van'] },
+      { pronoun: 'él/ella/Ud.',   accepted: ['va'] },
+    ]
+  },
+  tener: {
+    containerId: 'conjVerb2',
+    rows: [
+      { pronoun: 'yo',            accepted: ['tengo'] },
+      { pronoun: 'nosotros/as',   accepted: ['tenemos'] },
+      { pronoun: 'tú',            accepted: ['tienes'] },
+      { pronoun: 'ellos/Uds.',    accepted: ['tienen'] },
+      { pronoun: 'él/ella/Ud.',   accepted: ['tiene'] },
+    ]
+  },
+  hacer: {
+    containerId: 'conjVerb3',
+    rows: [
+      { pronoun: 'yo',            accepted: ['hago'] },
+      { pronoun: 'nosotros/as',   accepted: ['hacemos'] },
+      { pronoun: 'tú',            accepted: ['haces'] },
+      { pronoun: 'ellos/Uds.',    accepted: ['hacen'] },
+      { pronoun: 'él/ella/Ud.',   accepted: ['hace'] },
+    ]
+  }
+};
+
+function buildConjTable(verbKey) {
+  const { containerId, rows } = conjData[verbKey];
+  const grid = document.getElementById(containerId);
+  rows.forEach((row, i) => {
+    const div = document.createElement('div');
+    div.className = 'conj-row';
+    div.innerHTML = `
+      <span class="conj-pronoun">${row.pronoun}</span>
+      <input class="conj-input" id="conj_${verbKey}_${i}" type="text" placeholder="___" autocomplete="off" spellcheck="false">`;
+    grid.appendChild(div);
+  });
+}
+
+buildConjTable('ir');
+buildConjTable('tener');
+buildConjTable('hacer');
+
+function checkEj3() {
+  let correct = 0, total = 0;
+  Object.keys(conjData).forEach(verbKey => {
+    conjData[verbKey].rows.forEach((row, i) => {
+      const inp = document.getElementById(`conj_${verbKey}_${i}`);
+      const ok = row.accepted.some(a => normalize(a) === normalize(inp.value));
+      inp.className = 'conj-input ' + (ok ? 'correct-input' : 'wrong-input');
+      if (ok) correct++;
+      total++;
+    });
+  });
+  showScore('score3', correct, total);
+}
+
+function resetEj3() {
+  Object.keys(conjData).forEach(verbKey => {
+    conjData[verbKey].rows.forEach((row, i) => {
+      const inp = document.getElementById(`conj_${verbKey}_${i}`);
+      inp.value = '';
+      inp.className = 'conj-input';
+    });
+  });
+  document.getElementById('score3').className = 'score-badge';
+}
+
+// ── EJERCICIO 4 — ir / tener / hacer in Context ────
+const ej4Data = [
+  { before: 'Yo',              verb: '(tener)',         after: 'mucha tarea este semestre.',                    accepted: ['tengo'] },
+  { before: '¿A dónde',         verb: '(ir, tú)',        after: 'los viernes por la noche?',                     accepted: ['vas'] },
+  { before: 'Ella',            verb: '(hacer)',         after: 'ejercicio en el gimnasio todos los días.',      accepted: ['hace'] },
+  { before: 'Nosotros',        verb: '(tener)',         after: 'una reunión del club esta tarde.',              accepted: ['tenemos'] },
+  { before: '¿Qué',            verb: '(hacer, Uds.)',   after: 'el fin de semana?',                             accepted: ['hacen'] },
+  { before: 'Los estudiantes', verb: '(ir)',            after: 'a la biblioteca a estudiar.',                   accepted: ['van'] },
+  { before: 'Yo',              verb: '(hacer)',         after: 'una presentación mañana.',                      accepted: ['hago'] },
+  { before: '¿Tú',             verb: '(tener)',         after: 'hermanos?',                                      accepted: ['tienes'] },
+];
+buildFillExercise(ej4Data, 4, 'ej4');
+function checkEj4() { checkFillExercise(ej4Data, 4, 'score4'); }
+function resetEj4() { resetFillExercise(ej4Data, 4, 'score4'); }
+
+// ── EJERCICIO 5 — Adjective Agreement Rewrite ──────
+const ej5Data = [
+  { before: 'un actor talentoso → una actriz',              verb: '→', after: '', accepted: ['talentosa', 'una actriz talentosa'] },
+  { before: 'una cantante famosa → unos cantantes',         verb: '→', after: '', accepted: ['famosos', 'unos cantantes famosos'] },
+  { before: 'el político serio → la política',              verb: '→', after: '', accepted: ['seria', 'la política seria'] },
+  { before: 'los directores creativos → las directoras',    verb: '→', after: '', accepted: ['creativas', 'las directoras creativas'] },
+  { before: 'una escritora trabajadora → un escritor',      verb: '→', after: '', accepted: ['trabajador', 'un escritor trabajador'] },
+  { before: 'el estudiante inteligente → los estudiantes',  verb: '→', after: '', accepted: ['inteligentes', 'los estudiantes inteligentes'] },
+  { before: 'una científica brillante → unos científicos',  verb: '→', after: '', accepted: ['brillantes', 'unos científicos brillantes'] },
+  { before: 'un deportista extrovertido → una deportista',  verb: '→', after: '', accepted: ['extrovertida', 'una deportista extrovertida'] },
+];
+buildFillExercise(ej5Data, 5, 'ej5');
+function checkEj5() { checkFillExercise(ej5Data, 5, 'score5'); }
+function resetEj5() { resetFillExercise(ej5Data, 5, 'score5'); }
+
+// ── EJERCICIO 6 — Cognate Pattern Conversion ───────
+const ej6Data = [
+  { before: 'education',   verb: '-tion → -ción',   after: '', accepted: ['educación', 'educacion'] },
+  { before: 'liberty',     verb: '-ty → -dad',      after: '', accepted: ['libertad'] },
+  { before: 'generous',    verb: '-ous → -oso',     after: '', accepted: ['generoso'] },
+  { before: 'automatic',   verb: '-ic → -ico',      after: '', accepted: ['automático', 'automatico'] },
+  { before: 'exactly',     verb: '-ly → -mente',    after: '', accepted: ['exactamente'] },
+  { before: 'electricity', verb: '-ty → -dad',      after: '', accepted: ['electricidad'] },
+  { before: 'decision',    verb: '-sion → -sión',   after: '', accepted: ['decisión', 'decision'] },
+  { before: 'fantastic',   verb: '-ic → -ico',      after: '', accepted: ['fantástico', 'fantastico'] },
+  { before: 'university',  verb: '-ty → -dad',      after: '', accepted: ['universidad'] },
+  { before: 'famous',      verb: '-ous → -oso',     after: '', accepted: ['famoso'] },
+];
+buildFillExercise(ej6Data, 6, 'ej6');
+function checkEj6() { checkFillExercise(ej6Data, 6, 'score6'); }
+function resetEj6() { resetFillExercise(ej6Data, 6, 'score6'); }
+
+// ── EJERCICIO 7 — Falsos Amigos ────────────────────
+const ej7Data = [
+  { before: 'embarazada',  verb: '≠ embarrassed', after: '', accepted: ['pregnant'] },
+  { before: 'éxito',       verb: '≠ exit',        after: '', accepted: ['success'] },
+  { before: 'librería',    verb: '≠ library',     after: '', accepted: ['bookstore', 'book store'] },
+  { before: 'sopa',        verb: '≠ soap',        after: '', accepted: ['soup'] },
+  { before: 'ropa',        verb: '≠ rope',        after: '', accepted: ['clothes', 'clothing'] },
+  { before: 'carpeta',     verb: '≠ carpet',      after: '', accepted: ['folder'] },
+  { before: 'asistir',     verb: '≠ to assist',   after: '', accepted: ['attend', 'to attend'] },
+  { before: 'actualmente', verb: '≠ actually',    after: '', accepted: ['currently'] },
+];
+buildFillExercise(ej7Data, 7, 'ej7');
+function checkEj7() { checkFillExercise(ej7Data, 7, 'score7'); }
+function resetEj7() { resetFillExercise(ej7Data, 7, 'score7'); }
+</script>
+
+</body>
+</html>
